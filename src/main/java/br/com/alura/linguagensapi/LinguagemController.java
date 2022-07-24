@@ -14,12 +14,14 @@ public class LinguagemController {
     @Autowired
     private LinguagemRepository repositorio;
 
+    // GET method HTTP
     @GetMapping("/linguagens")
     public List<Linguagem> obterLinguagens() {
         List<Linguagem> linguagens = repositorio.findAll();
         return linguagens;
     }
 
+    //POST method HTTP
     @PostMapping("/linguagens")
     public Linguagem cadastrarLinguagem(@RequestBody Linguagem linguagem) {
         Linguagem linguagemSalva = repositorio.save(linguagem);
